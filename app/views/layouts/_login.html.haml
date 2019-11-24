@@ -5,11 +5,11 @@
               local: true do
     %i.fa.fa-times.subdued.modal-close
     - if !params[:log_in_with] or params[:log_in_with] == 'facebook'
-      %p.text-center
-        %button{formaction: facebook_login_path, formmethod: :post,
-                class: "button button-facebook"}
-          = image_tag('facebook_icon.png')
-          Log in with Facebook
+      .text-center
+        .fb-login-button(data-width="" data-size="large"
+                         data-button-type="login_with"
+                         data-auto-logout-link="false"
+                         data-use-continue-as="false")
     - if !params[:log_in_with]
       %p.text-center.subdued &#8212; or &#8212;
     - if !params[:log_in_with] or params[:log_in_with] == 'twitter'

@@ -24,6 +24,10 @@ module ApplicationHelper
     return !ENV["SWAPS_CLOSED"]
   end
 
+  def login_open?
+    swapping_open? || params[:opensesame]
+  end
+
   def canonical_name(name)
     return nil if name.nil?
     return name.parameterize(separator: "_")

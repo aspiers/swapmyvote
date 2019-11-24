@@ -28,12 +28,15 @@
     = render partial: 'layouts/google_analytics'
 
   %body
+    - if login_open?
+      = render partial: "layouts/facebook_login_js"
+
     .navbar
       = link_to "SwapMyVote", root_path, class: "brand"
 
       - if logged_in?
         = render partial: "layouts/current_user"
-      - elsif swapping_open? || params[:opensesame]
+      - elsif login_open?
         = render partial: "layouts/login"
 
     - if flash[:errors]
