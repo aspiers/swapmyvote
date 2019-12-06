@@ -1,0 +1,39 @@
+@import "mixins";
+
+titler {
+    background-color: $bg-color;
+
+    .fa.fa-icon {
+        font-family: Helvetica, Arial, sans-serif;
+        font-weight: normal;
+        font-size: 16px;
+    }
+
+    .titler {
+        margin:  2px;
+    }
+
+    .list-group {
+        margin-top:  2px;
+    }
+
+    a.list-group-item {
+    }
+
+    .list-group-item {
+    }
+
+    .button {
+        background-color: $faded-color;
+        color: $white;
+        font-weight: normal;
+        padding: 0 4px 0 4px;
+    }
+
+    .login {
+        color: $white;
+        font-weight: normal;
+        padding: 0 4px 0 4px;
+    }
+
+}
