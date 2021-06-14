@@ -9,6 +9,7 @@ RSpec.describe UsersController, type: :controller do
     end
 
     before do
+      ENV["SWAPMYVOTE_MODE"] = "open-and-voting"
       # Stub out authentication
       allow(request.env["warden"]).to receive(:authenticate!).and_return(logged_in_user)
       allow(controller).to receive(:current_user).and_return(logged_in_user)

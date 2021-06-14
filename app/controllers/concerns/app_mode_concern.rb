@@ -1,25 +1,9 @@
+require_relative "../../lib/app_modes"
+require "active_support/concern"
+
 module AppModeConcern
   extend ActiveSupport::Concern
-
-  VALID_MODES = [
-    # Ramping up for election - announce we'll be participating and
-    # drum up interest
-    "closed-warm-up",
-
-    # Open for swapping pre election
-    "open",
-
-    # Election day!
-    # The old mode where we closed swaps:
-    "closed-and-voting",
-    # The fancy new mode where we keep swaps open but don't allow users
-    # with confirmed swaps to cancel or change their voting preferences
-    # or constituency.
-    "open-and-voting",
-
-    # Post-election aftermath
-    "closed-wind-down"
-  ]
+  include AppModes
 
   def valid_mode?(mode)
     VALID_MODES.include? mode
